@@ -173,6 +173,6 @@ if __name__ == '__main__':
     torch.backends.cudnn.benchmark = False
   yaml_args= yaml.load(open(cli_args.experiment_config))
   run_experiment.setup_new_experiment_dir(cli_args, yaml_args, cli_args.results_dir)
-  device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+  device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
   yaml_args['device'] = device
   report_on_stdin(yaml_args)
